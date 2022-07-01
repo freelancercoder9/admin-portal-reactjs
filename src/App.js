@@ -1,5 +1,6 @@
 import Home from "./pages/home/Home";
-import List from "./pages/list/List";
+import UserList from "./pages/userlist/UserList";
+import ProductList from "./pages/productlist/ProductList";
 import Login from "./pages/login/Login";
 import New from "./pages/new/New";
 import Single from "./pages/single/Single";
@@ -21,7 +22,7 @@ function App() {
             <Route index element={<Home></Home>}></Route>
             <Route path="login" element={<Login></Login>}></Route>
             <Route path="users">
-              <Route index element={<List></List>}></Route>
+              <Route index element={<UserList></UserList>}></Route>
               <Route path=":userId" element={<Single></Single>}></Route>
               <Route
                 path="new"
@@ -29,7 +30,7 @@ function App() {
               ></Route>
             </Route>
             <Route path="product">
-              <Route index element={<List></List>}></Route>
+              <Route index element={<ProductList></ProductList>}></Route>
               <Route path=":userId" element={<Single></Single>}></Route>
               <Route
                 path="new"

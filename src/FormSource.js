@@ -1,7 +1,7 @@
 export const userInputs = [
   {
     id: 1,
-    label: "UserName",
+    label: "User Name",
     type: "text",
     placeholder: "Sherli Deo",
   },

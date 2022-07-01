@@ -1,11 +1,11 @@
 import "./dataTable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { userRows, userColumns } from "../../DataTableSource";
+
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const DataTable = () => {
-  const [data, setData] = useState(userRows);
+const DataTable = ({ rowsData, columnData, label }) => {
+  const [data, setData] = useState(rowsData);
   const handleDelete = (id) => {
     console.log("click event ", id);
     setData(data.filter((item) => item.id !== id));
@@ -35,7 +35,7 @@ const DataTable = () => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        Add New User
+        {label}
         <Link to="/users/new" className="link">
           Add New
         </Link>
@@ -43,7 +43,7 @@ const DataTable = () => {
       <DataGrid
         className="datagrid"
         rows={data}
-        columns={userColumns.concat(actionColumn)}
+        columns={columnData.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
